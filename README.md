@@ -13,3 +13,4 @@ git clone https://github.com/sarahramadan/Webpack-Express-App.git
 - ```npm install```
 - ```npm start``` to start the app
 - this app runs on localhost:8080, but you can of course edit that in index.js
+- ```npm run build``` to generate dist folder
