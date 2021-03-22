@@ -1,17 +1,42 @@
-function handleSubmit(event) {
-    console.log('enter handleSubmit');
-    event.preventDefault()
-
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    Client.checkForName(formText)
-
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
+const server_url = "http://localhost:8081";
+const serverRequest = async (url = '', data = {}) => {
+    const serverResponse = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
     })
+    try {
+        const responseData = await serverResponse.json();
+        return responseData;
+    } catch (error) {
+        console.log(error)
+    }
+}
+const bindUpdateUI = (data)=>{
+    document.getElementById('status_code').innerHTML = data.status_code;
+    document.getElementById('model').innerHTML = data.model;
+    document.getElementById('score_tag').innerHTML = data.score_tag;
+    document.getElementById('agreement').innerHTML = data.agreement;
+    document.getElementById('subjectivity').innerHTML = data.subjectivity;
+
+}
+function handleSubmit(event) {
+    event.preventDefault()
+    // check what text was put into the form field
+    let formText = document.getElementById('name').value;
+    //check url is correct formate
+    Client.checkForName(formText);
+    //send request to server side
+    serverRequest(server_url+'/meaningcloud-api', {
+        url: formText
+    }).then(res => {
+        bindUpdateUI(res);
+        console.log('2- client res', res);
+    });
 }
 
 export { handleSubmit }

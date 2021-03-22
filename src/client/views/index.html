@@ -24,14 +24,20 @@
         <main>
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input id="name" type="text" name="input" value="" placeholder="Name">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
             <section>
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div id="results">
+                    <strong>Status_code:</strong> <br> <div id="status_code" class="result"></div>
+                    <strong>Model:</strong>  <br><div id="model" class="result"></div>
+                    <strong>Score_tag:</strong>  <br> <div id="score_tag" class="result"></div>
+                    <strong>Agreement:</strong>  <br> <div id="agreement" class="result"></div>
+                    <strong>Subjectivity:</strong>  <br> <div id="subjectivity" class="result"></div>
+                </div>
             </section>
         </main>
 
