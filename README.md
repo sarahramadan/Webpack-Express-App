@@ -1,5 +1,5 @@
 # Webpack-Express-App
-The goal of this repo is be an example of a basic but functional app built on Express and Webpack.
+This project to practice webpack, loader and plugin and how to connect between client and server.
 
 ## Get Up and Running
 
@@ -10,7 +10,10 @@ git clone https://github.com/sarahramadan/Webpack-Express-App.git
 ```
 
 `cd` into your new folder and run:
-- ```npm install```
-- ```npm start``` to start the app
-- this app runs on localhost:8081, but you can of course edit that in index.js
-- ```npm run build``` to generate dist folder
+- ```npm install``` to install dependencies from package.json
+- ```npm run build-dev``` to generate dist folder from development mode configuration file 
+- ```npm run build-prod``` to generate dist folder from production mode configuration file 
+- ```npm start``` to start the server app
+- this app runs on localhost:8081
+
+
