@@ -5,5 +5,5 @@ import { checkForName } from "./../js/nameChecker"
 describe("Testing check url functionality", () => {
     test("Testing the checkForName() function", () => {
         let url ="http://tika.apache.org/1.3/formats.html&lang=en";
-         expect(checkForName(url)).toBe(false);
+         expect(checkForName(url)).toBe(true);
 })});
