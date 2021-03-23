@@ -24,7 +24,7 @@
         <main>
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Name">
+                    <input id="name" type="text" name="input" value="" placeholder="URL">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
@@ -38,13 +38,14 @@
                     <strong>Agreement:</strong>  <br> <div id="agreement" class="result"></div>
                     <strong>Subjectivity:</strong>  <br> <div id="subjectivity" class="result"></div>
                 </div>
+             
             </section>
         </main>
 
         <footer>
             <p>This is a footer</p>
         </footer>
-        <script>
+        <!-- <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
@@ -52,6 +53,6 @@
                     navigator.serviceWorker.register('/service-worker.js');
                 });
             }
-           </script>
+           </script> -->
     </body>
 </html>

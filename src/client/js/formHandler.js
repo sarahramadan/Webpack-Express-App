@@ -29,13 +29,16 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('name').value;
     //check url is correct formate
-    Client.checkForName(formText);
+    let notValidUrl = Client.checkForName(formText);
+    if(notValidUrl){
+        alert("invalid url")
+        return;
+    }
     //send request to server side
     serverRequest(server_url+'/meaningcloud-api', {
         url: formText
     }).then(res => {
         bindUpdateUI(res);
-        console.log('2- client res', res);
     });
 }
 
