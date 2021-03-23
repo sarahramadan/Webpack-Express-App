@@ -29,9 +29,17 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('name').value;
     //check url is correct formate
-    let notValidUrl = Client.checkForName(formText);
-    if(notValidUrl){
-        alert("invalid url")
+    let isValidUrl = Client.checkForName(formText);
+    if(!isValidUrl){
+        const resultObj = {
+            status_code: '',
+            model: '',
+            score_tag: '',
+            agreement: '',
+            subjectivity: ''
+        }
+        bindUpdateUI(resultObj);
+        alert("invalid url");
         return;
     }
     //send request to server side
