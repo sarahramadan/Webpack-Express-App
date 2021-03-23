@@ -37,7 +37,6 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 const meaningcloudRequest = async (url = '',data={}) => {
-    console.log('url',url);
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
